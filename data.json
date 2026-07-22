@@ -1,0 +1,27 @@
+{
+  "Ashram": "Prashanthi Balamandira Trust",
+  "buildings": [
+    {
+      "date": "2026-07-24",
+      "blocks": {
+        "G-Block": {
+          "G101": {"capacity": 2, "occupancy": 1},
+          "G105": {"capacity": 2, "occupancy": 0},
+          "G107": {"capacity": 2, "occupancy": 0},
+          "G115": {"capacity": 2, "occupancy": 0}
+        }
+      }
+    },
+    {
+      "date": "2026-07-04",
+      "blocks": {
+        "H-Block": {
+          "H121": {"capacity": 2, "occupancy": 2},
+          "H115": {"capacity": 2, "occupancy": 1},
+          "H113": {"capacity": 2, "occupancy": 0},
+          "H125": {"capacity": 2, "occupancy": 0}
+        }
+      }
+    }
+  ]
+}
