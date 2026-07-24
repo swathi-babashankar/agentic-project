@@ -18,6 +18,13 @@ available_tools = {
     "Get available rooms in G block": getGRooms
 }
 
+available_dates = {
+   "2026-07-04": "Get available rooms",
+   "2026-07-24": "Get available rooms in G block"
+}
+
 def choose_tool(requestType):
     return available_tools.get(requestType)
 
+def get_available_dates(date):
+    return available_dates.get(date)

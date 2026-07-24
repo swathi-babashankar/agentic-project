@@ -1,4 +1,4 @@
-from tools import choose_tool
+from tools import choose_tool, get_available_dates
 from config import allowed_tools, trace, MAX_STEPS
 import json
 
@@ -11,19 +11,23 @@ trace.append(f"Allowed tools: {allowed_tools}")
 trace.append(f"Max steps: {MAX_STEPS}")
 
 
-def runLoop(requestType, building_data):
+def runLoop(requestType, building_data, date):
     availableRooms = []
 
-    for step in range(MAX_STEPS):
-        trace.append(f"Step {step + 1}: evaluating request '{requestType}'")
-        tool = choose_tool(requestType)
+    for step in range(1, MAX_STEPS + 1):
+        trace.append(f"Step {step}: evaluating request '{requestType}'")
 
+        print("date", date)
+        requestType = get_available_dates(date)
+        tool = choose_tool(requestType)
+        
         if tool is None:
             print(f"Tool {requestType} is invalid.")
             trace.append(f"Invalid tool: {requestType}")
             return "ESCALATE"
 
         trace.append(f"Tool selected: {tool.__name__}")
+        trace.append(f"Date selected: {date}")
 
         result = tool(building_data)
         if isinstance(result, list):
@@ -37,4 +41,4 @@ def runLoop(requestType, building_data):
 
 
 if __name__ == "__main__":
-    runLoop("Get available rooms", data)
+    runLoop("Get available rooms", data, "2026-07-04")
