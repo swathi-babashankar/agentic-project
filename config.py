@@ -1,6 +1,6 @@
 # Global variables
 
-MAX_STEPS = 1
+MAX_STEPS = 3
 
 allowed_tools = ["getAvailableRooms", "getGRooms"]
 
